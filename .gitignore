@@ -1,0 +1,48 @@
+# Build artifacts
+/client/build/
+
+
+# Dependency folder
+
+node_modules
+
+# Coverage reports
+
+/client/coverage/
+/server/coverage/
+
+# Certificates
+
+/client/certificates/**/*.pem
+/server/certificates/**/*.pem
+
+# Distribution folder
+
+/server/dist/
+
+# Environment files
+
+.env
+
+# Log files
+./logs/
+*.log
+
+# Ignore empty directories
+
+!*/
+
+
+node_modules
+data
+*.tar.gz
+*.log
+*.env
+*.log
+server/dist
+server/coverage
+**/service-account.json
+client/build
+client/coverage
+client/src/**/*.css
+.idea

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './_colors.scss';
+
+
+body {
+    color: #040D12;
+	// font-family: 'Segou UI', sans-serif;
+}
+
+::-webkit-scrollbar {
+    max-width: 10px;
+	width: 2.4dvw;
+}
+::-webkit-scrollbar-track {
+	background: #e1dffe;
+}
+::-webkit-scrollbar-thumb {
+	background: $primary;
+	border-radius: 4rem;
+
+	&:hover {
+		background: rgba($primary, .8);
+	}
+}
+
+// selection
+::selection {
+	background: rgba($primary, .8);
+	color: #fcfcfc;
+}
+
+
+.max-w-8xl { max-width: 88rem; }
+.max-w-9xl { max-width: 96rem; }
