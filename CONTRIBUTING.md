@@ -82,6 +82,10 @@ npm test
 4. In the pull request description, include a detailed explanation of your changes and why they are necessary.
 
 
+### Contributing to translation
+We do not accept any translation changes in commits on Github.
+All translation contributions are managed through [Crowdin](https://crowdin.com/project/quizontwitch), and later merged by administrators.
+
 ### Resources
 * [Github Wiki](https://github.com/ILostMyMedic/QuizOnTwitch/wiki)
 
