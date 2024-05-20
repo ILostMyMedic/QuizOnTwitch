@@ -26,7 +26,11 @@ node_modules
 
 # Log files
 ./logs/
+./**/logs/
 *.log
+
+# Out
+./out/
 
 # Ignore empty directories
 

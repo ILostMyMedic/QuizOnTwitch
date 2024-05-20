@@ -1,8 +1,8 @@
-import { Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const QuizSchema = new Schema(
     {
-        owner: {
+        ownerId: {
             type: Schema.Types.ObjectId,
             required: true,
         },
@@ -40,4 +40,5 @@ const QuizSchema = new Schema(
     }
 );
 
-export default QuizSchema;
+const Quiz = mongoose.model('Quizzes', QuizSchema);
+export default Quiz;

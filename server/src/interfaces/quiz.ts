@@ -14,9 +14,16 @@ export interface IQuiz {
     id: string;
     title: string;
     description: string;
-    questions: IQuestions[];
     private: boolean;
     createdAt?: Date;
     updatedAt?: Date;
     ownerId: string;
+}
+
+export interface IQuizRequest extends IQuiz {
+    questions: IQuestions[];
+}
+
+export interface IQuizResponse extends IQuiz {
+    questions: string[];
 }

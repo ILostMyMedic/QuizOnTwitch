@@ -1,13 +1,9 @@
-import mongoose from 'mongoose';
-import userSchema from '../../schemas/users';
+import UserSchema from '../../schemas/users';
 import logger from '../../utils/logger';
-
-const users = mongoose.model('users', userSchema);
 
 const getLeaderboard = async (page: number, limit: number) => {
     try {
-        const leaderboard = await users
-            .find()
+        const leaderboard = await UserSchema.find()
             .sort({ score: -1 })
             .skip((page - 1) * limit)
             .limit(limit)
