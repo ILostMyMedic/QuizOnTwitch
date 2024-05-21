@@ -1,7 +1,11 @@
 import { Router } from 'express';
-import create from './create';
+import createQuiz from './create';
+import deleteQuiz from './delete';
+import editQuiz from './edit';
 
 const router = Router();
-router.use('/create', create);
+router.use('/', createQuiz);
+router.use('/', deleteQuiz);
+router.use('/', editQuiz);
 
 export default router;

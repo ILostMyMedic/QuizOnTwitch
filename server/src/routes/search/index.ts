@@ -1,11 +1,10 @@
 import { Request, Response, Router } from 'express';
 import { HttpStatusCodes } from '../../constants/StatusCodes';
-
+import MyQuizRoutes from './MyQuiz';
+import SearchRoutes from './search';
 const router = Router();
 
-// GET /search
-router.get('/', (req: Request, res: Response) => {
-    res.status(HttpStatusCodes.OK).send('Hello from search!');
-});
+router.use('/', SearchRoutes);
+router.use('/myquiz', MyQuizRoutes);
 
 export default router;

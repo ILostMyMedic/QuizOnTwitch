@@ -20,6 +20,15 @@ export interface IQuiz {
     ownerId: string;
 }
 
+export interface IQuizSearch {
+    ownerId?: string;
+    private?: boolean;
+    title?: string;
+    description?: string;
+    deleted?: boolean;
+    ratings?: number;
+}
+
 export interface IQuizRequest extends IQuiz {
     questions: IQuestions[];
 }
