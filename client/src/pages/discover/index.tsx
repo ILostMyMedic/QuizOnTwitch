@@ -10,6 +10,9 @@ import FullSet from './components/fullset';
 import { useLocation } from 'react-router-dom';
 import ButtonDivider from '../../components/buttonDivider';
 import { Text } from '../../components/text';
+import axios from 'axios';
+import { IQuiz } from '../../interfaces/quiz';
+
 
 const sortOptions = [
     { name: 'Most Popular', href: '#', current: true },
@@ -51,10 +54,25 @@ function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+const Discover = () =>{
     const location = useLocation();
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const [search, setSearch] = useState('');
+
+    const [quiz, setQuiz] = useState([] as IQuiz[]);
+
+    useEffect(() => {
+        const fetchQuizzes = async () => {
+            try {
+                const response = await axios.get('/api/search');
+                setQuiz(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchQuizzes();
+    }, []);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -389,7 +407,7 @@ export default function Example() {
                                         />
                                         Recently played
                                     </Text>
-                                    <Preview />
+                                    <Preview quizzes={quiz} />
                                     <ButtonDivider
                                         buttonText="Load More"
                                         onClick={() => console.log('Load More')}
@@ -404,7 +422,7 @@ export default function Example() {
                                         />
                                         Most liked
                                     </Text>
-                                    <Preview />
+                                    <Preview quizzes={quiz} />
                                     <ButtonDivider
                                         buttonText="Load More"
                                         onClick={() => console.log('Load More')}
@@ -419,7 +437,7 @@ export default function Example() {
                                         />
                                         New Arrivals
                                     </Text>
-                                    <Preview />
+                                    <Preview quizzes={quiz} />
                                     <ButtonDivider
                                         buttonText="Load More"
                                         onClick={() => console.log('Load More')}
@@ -433,3 +451,6 @@ export default function Example() {
         </div>
     );
 }
+
+
+export default Discover;

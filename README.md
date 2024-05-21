@@ -73,11 +73,5 @@ We will go over installation separatly.
 | v20.5   | NodeJS       |
 
 
-
-## Third-party setups
-
-### Auth0
-#### Twitch
-### MongoDB
-
+#
 > ###### Bugs with 💜 by ILostMyMedic

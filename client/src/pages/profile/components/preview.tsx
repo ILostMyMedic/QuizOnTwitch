@@ -1,10 +1,16 @@
+import React from 'react';
 import { HeartIcon as HeartSolid } from '@heroicons/react/20/solid';
 import { HeartIcon as HeatOutline } from '@heroicons/react/24/outline';
 import { Button } from '../../../components/button';
 import { Text } from '../../../components/text';
 import { IQuiz } from '../../../interfaces/quiz';
 
-const Preview = ({ quizzes }: { quizzes: IQuiz[] }) => {
+
+
+const Preview = (
+    { quizzes }: { quizzes: IQuiz[] }
+) => {
+
     const convertLikes = (likes: number) => {
         if (likes < 1000) {
             return likes;
@@ -43,6 +49,7 @@ const Preview = ({ quizzes }: { quizzes: IQuiz[] }) => {
                                 </Text>
                                 <Text className="text-sm sm:text-sm">{quiz.description}</Text>
                                 <div className="flex flex-1 flew-row items-center w-full">
+                                    
                                     {quiz.ratings ? (
                                         <HeartSolid className="text-red-500 w-6" />
                                     ) : (

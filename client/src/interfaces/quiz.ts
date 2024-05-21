@@ -1,43 +1,44 @@
-export enum QuizStatus {
-    Waiting = 'waiting',
-    Started = 'started',
-    Ended = 'ended',
-}
-export enum PlayerStatus {
-    Waiting = 'joined',
-    Playing = 'playing',
-    Ended = 'guessed',
-}
-
 export interface IQuestion {
     question: string;
     answer: string;
     options: string[];
 }
 
-export interface IQuiz {
-    host: string;
-    code: string;
-    questions: IQuestion[];
-    score: number;
-    currentQuestionIndex: number;
-    getQuestion: () => IQuestion;
-    guess: (answer: string) => void;
-    nextQuestion: () => void;
-    hasEnded: () => boolean;
-    reset: () => void;
-    players: IPlayer[];
+export interface IOptions {
+    id: string;
+    option: string;
+    isCorrect: boolean;
 }
 
-export interface IPlayer {
+export interface IQuestions {
     id: string;
-    username: string;
-    avatar: string;
-    score: number;
-    currentQuestionIndex: number;
-    getQuestion: () => IQuestion;
-    guess: (answer: string) => void;
-    nextQuestion: () => void;
-    hasEnded: () => boolean;
-    reset: () => void;
+    question: string;
+    options: IOptions[];
+}
+export interface IQuiz {
+    id: string;
+    title: string;
+    description: string;
+    private: boolean;
+    createdAt?: Date;
+    updatedAt?: Date;
+    ownerId: string;
+    ratings?: number;
+}
+
+export interface IQuizSearch {
+    ownerId?: string;
+    private?: boolean;
+    title?: string;
+    description?: string;
+    deleted?: boolean;
+    ratings?: number;
+}
+
+export interface IQuizRequest extends IQuiz {
+    questions: IQuestions[];
+}
+
+export interface IQuizResponse extends IQuiz {
+    questions: string[];
 }
