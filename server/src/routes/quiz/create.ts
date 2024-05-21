@@ -3,6 +3,7 @@ import { HttpStatusCodes } from '../../constants/StatusCodes';
 import createQuestions from '../../services/quiz/questions/create';
 import createQuiz from '../../services/quiz/create';
 import { IQuizRequest, IQuestions, IQuizResponse, IOptions } from '../../interfaces/quiz';
+import logger from '../../utils/logger';
 
 const router = Router();
 
@@ -56,6 +57,8 @@ router.post('/', async (req: Request, res: Response) => {
         res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).send({
             message: 'Internal server error',
         });
+
+        logger.error(error);
     }
 });
 

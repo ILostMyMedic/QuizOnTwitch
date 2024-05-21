@@ -1,8 +1,10 @@
 import logger from './logger';
+import connection from '../database';
 
 process.stdin.resume(); // so the program will not close instantly
 
 async function exitHandler(options: any, exitCode: any) {
+    await connection.disconnect();
     if (options.cleanup) logger.server('📡 Closing down...');
     if (exitCode || exitCode === 0) logger.error(exitCode);
     if (options.exit) process.exit();
