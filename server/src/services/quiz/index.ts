@@ -1,4 +1,8 @@
 import createQuiz from './create';
 import deleteQuiz from './delete';
+import editQuiz from './edit';
+import getQuiz from './get';
 
-export { createQuiz, deleteQuiz };
+import createQuestions from './questions/create';
+
+export { createQuiz, deleteQuiz, editQuiz, getQuiz, createQuestions };

@@ -59,7 +59,6 @@ const Navigation = () => {
     const navigation = [
         { name: strings.navItemHome, href: routes.root },
         { name: strings.navItemDiscover, href: routes.discover.root },
-        { name: strings.navItemMyQuizzes, href: routes.quiz.root },
         { name: strings.navItemLeaderboard, href: routes.leaderboard.root },
     ];
 

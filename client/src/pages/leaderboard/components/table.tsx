@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PlayerCol, { IPlayer } from './playerCol';
+import { v4 as uuid } from 'uuid';
 
 const Table = ({ players }: { players: IPlayer[] }) => {
     const [data, setData] = useState<IPlayer[]>([]);
@@ -16,7 +17,7 @@ const Table = ({ players }: { players: IPlayer[] }) => {
     return (
         <div className="relative flex flex-col w-full mt-10">
             {data.map((player) => (
-                <PlayerCol key={player.id} player={player} />
+                <PlayerCol key={uuid()} player={player} />
             ))}
         </div>
     )

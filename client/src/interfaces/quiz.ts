@@ -16,10 +16,21 @@ export interface IQuestions {
     options: IOptions[];
 }
 export interface IQuiz {
-    id: string;
+    _id: string;
     title: string;
     description: string;
     private: boolean;
+    icon?: string;
+    gradients?: {
+        bottom: {
+            start: string;
+            end: string;
+        };
+        top: {
+            start: string;
+            end: string;
+        };
+    }
     createdAt?: Date;
     updatedAt?: Date;
     ownerId: string;

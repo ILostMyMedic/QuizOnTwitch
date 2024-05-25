@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import './_colors.scss';
-
+@import './_gradients.scss';
 
 body {
     color: $font-color;
@@ -19,7 +19,6 @@ body {
 }
 ::-webkit-scrollbar-thumb {
 	background: $primary;
-	border-radius: 4rem;
 
 	&:hover {
 		background: rgba($primary, .8);
