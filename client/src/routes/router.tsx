@@ -10,7 +10,7 @@ import TestPage from '../pages/test';
 // =================================
 
 // PROFILE =========================
-import {CreateQuizPage, MyQuizzesPage} from '../pages/quiz';
+import {CreateQuizPage} from '../pages/quiz';
 // =================================
 
 // PROFILE =========================
@@ -33,7 +33,6 @@ const RouterComponent = createBrowserRouter([
             { path: routes.discover.root, element: <DiscoverPage /> },
             { path: routes.leaderboard.root, element: <LeaderboardPage /> },
 
-            { path: routes.quiz.root, element: <MyQuizzesPage /> },
             { path: routes.quiz.create, element: <CreateQuizPage /> },
 
             { path: routes.profile.root, element: <ProfilePage /> },

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import localSettings from '../local.settings.json';
 import routes from '../routes/paths';
 import { useStrings } from '../hooks/useStrings';
-
+import { v4 as uuid } from 'uuid';
 
 const Footer = () => {
     const strings = useStrings();
@@ -29,7 +29,7 @@ const Footer = () => {
                         aria-label="Footer"
                     >
                         {navigation.main.map((item) => (
-                            <div key={item.name} className="pb-6">
+                            <div key={uuid()} className="pb-6">
                                 <Link
                                     to={item.href}
                                     className="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"

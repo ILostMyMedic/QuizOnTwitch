@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import { HttpStatusCodes } from '../../constants/StatusCodes';
-import deleteQuiz from '../../services/quiz/delete';
+import { deleteQuiz } from '../../services/quiz';
 import logger from '../../utils/logger';
 
 const router = Router();

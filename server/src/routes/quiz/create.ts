@@ -1,7 +1,6 @@
 import { Request, Response, Router } from 'express';
 import { HttpStatusCodes } from '../../constants/StatusCodes';
-import createQuestions from '../../services/quiz/questions/create';
-import createQuiz from '../../services/quiz/create';
+import { createQuiz, createQuestions } from '../../services/quiz';
 import { IQuizRequest, IQuestions, IQuizResponse, IOptions } from '../../interfaces/quiz';
 import logger from '../../utils/logger';
 

@@ -132,8 +132,7 @@ class logger {
         this.info(`Platform: ${os.platform()}`);
         this.info(`CPU: ${os.cpus()[0].model}`);
         this.info(`PID: ${process.pid}`);
-        this.info('_____________________________________________________');
-        console.log(); // tslint:disable-line
+        this.info('_____________________________________________________\n');
     }
 }
 

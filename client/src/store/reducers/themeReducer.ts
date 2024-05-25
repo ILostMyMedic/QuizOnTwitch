@@ -8,7 +8,7 @@ const initialState: ThemeState = {
     isDarkMode:
         localStorage.getItem('isDarkMode') != undefined
             ? JSON.parse(localStorage.getItem('isDarkMode') as string)
-            : false, //light mode is the default// Set default to 'light' if not found in localStorage
+            : window.matchMedia('(prefers-color-scheme: dark)').matches,
 };
 
 const themeSlice = createSlice({

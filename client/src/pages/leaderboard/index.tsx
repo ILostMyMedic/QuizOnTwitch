@@ -10,6 +10,7 @@ import axios from "axios";
 import { LoadingSmall as Loading } from '../../layout/loading';
 import { Text, Strong } from '../../components/text';
 import { useStrings } from '../../hooks/useStrings';
+import { v4 as uuid } from 'uuid';
 
 let players: IPlayer[] = [];
 
@@ -31,12 +32,11 @@ const Leaderboard = () => {
         if(!loading) return;
         axios.get('/api/leaderboard?page=1&limit=10')
             .then((response) => {
-                console.log(response.data);
                 setLoading(false);
                 players = response.data.leaderboard as IPlayer[];
             })
             .catch((error) => {
-                console.log(error);
+                console.error(error);
                 setLoading(false);
             });
     }, []);
@@ -63,7 +63,7 @@ const Leaderboard = () => {
                         defaultValue={tabs.find((tab) => tab.current)?.name ?? ''}
                     >
                         {tabs.map((tab) => (
-                            <option key={tab.name}>{tab.name}</option>
+                            <option key={uuid()}>{tab.name}</option>
                         ))}
                     </select>
                 </div>
@@ -71,7 +71,7 @@ const Leaderboard = () => {
                     <nav className="flex space-x-4" aria-label="Tabs">
                         {tabs.map((tab) => (
                             <a
-                                key={tab.name}
+                                key={uuid()}
                                 href={tab.href}
                                 className={classNames(
                                     tab.current

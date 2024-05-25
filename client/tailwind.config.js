@@ -16,6 +16,14 @@ module.exports = {
                     100: '#ddd9ef',
                     200: '#8e8eba',
                 },
+                container: {
+                    light: '#fff',
+                    dark: '#201f2d',
+                },
+                main: {
+                    light: '#edf4fa',
+                    dark: '#191825',
+                },
             },
             textColor: {
                 primary: '#5d53fc',
@@ -36,7 +44,7 @@ module.exports = {
                     dark: '#201f2d',
                 },
                 main: {
-                    light: '#F5F5F5',
+                    light: '#edf4fa',
                     dark: '#191825',
                 },
             },

@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev-local-client": "cd client && npm run dev > ./client.log",
-		"dev-local-server": "cd server && npm run start > ./server.log"
+		"dev-local-client": "cd client && npm run dev",
+		"dev-local-server": "cd server && npm run start"
 	}
 }

@@ -1,0 +1,21 @@
+@import './_colors.scss';
+
+
+
+$gradient-rose: linear-gradient(90deg, $rose-orange, $rose-red);
+$gradient-ocean: linear-gradient(90deg, $ocean-green, $ocean-blue);
+$gradient-sunset: linear-gradient(90deg, $sunset-orange, $sunset-rose);
+$gradient-forest: linear-gradient(90deg, $forest-light, $forest-dark);
+
+
+.gradient-rose { background: $gradient-rose; }
+.fill-gradient-rose { fill: $gradient-rose; }
+
+.gradient-ocean { background: $gradient-ocean; }
+.fill-gradient-ocean { fill: $gradient-ocean; }
+
+.gradient-sunset { background: $gradient-sunset; }
+.fill-gradient-sunset { fill: $gradient-sunset; }
+
+.gradient-forest { background: $gradient-forest; }
+.fill-gradient-forest { fill: $gradient-forest; }
